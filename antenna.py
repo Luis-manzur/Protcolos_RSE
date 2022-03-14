@@ -4,7 +4,7 @@ from time import sleep, time
 class Status_Reader:
     """A class that watch the status from the antenna."""
 
-    def __init__(self, gpio_0, gpio_1) -> None:
+    def __init__(self, gpio_0, gpio_1):
 
         self.gpio_0 = gpio_0
         self.gpio_1 = gpio_1
