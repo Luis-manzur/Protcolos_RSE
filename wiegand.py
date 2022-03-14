@@ -2,7 +2,7 @@
 
 import pigpio
 
-class decoder:
+class Decoder:
 
    """
    A class to read Wiegand codes of an arbitrary length.
@@ -86,26 +86,3 @@ class decoder:
 
       self.cb_0.cancel()
       self.cb_1.cancel()
-
-if __name__ == "__main__":
-
-   import time
-
-   import pigpio
-
-   import wiegand
-
-   def callback(bits, value):
-      print("bits={} value={:026b}".format(bits, value))
-      card_id = int("{:026b}".format(value)[1:25],2)
-      print("Card ID: {:010d}".format(card_id))
-
-   pi = pigpio.pi()
-
-   w = wiegand.decoder(pi, 14, 15, callback)
-
-   time.sleep(1000)
-
-   w.cancel()
-
-   pi.stop()
