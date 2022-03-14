@@ -15,12 +15,12 @@ class Status_Reader:
 
     def status(self):
         """Read the status every 2 seconds"""
-        if GPIO.input(self.gpio_0) == 1:
-            if GPIO.input(self.gpio_1) == 1:
+        if GPIO.input(self.gpio_0) == 0:
+            if GPIO.input(self.gpio_1) == 0:
                 print("La antena esta desconectada")
 
-        if GPIO.input(self.gpio_1) == 1:
-            if GPIO.input(self.gpio_0) == 1:
+        if GPIO.input(self.gpio_1) == 0:
+            if GPIO.input(self.gpio_0) == 0:
                 print("La antena esta desconectada")
         sleep(2)
         self.status()
