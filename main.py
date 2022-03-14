@@ -15,7 +15,7 @@ GPIO.setup(18, GPIO.IN)
 def callback(bits, value):
     card_id = int("{:026b}".format(value)[1:25],2)
     if "{:010d}".format(card_id) == "0000000000":
-        if GPIO.input(2) == 1:
+        if GPIO.input(18) == 1:
             print("No hay corriente en la antena.")
         else:
             print("Problemas con la antena, fuente de poder funciona perfectamente")
