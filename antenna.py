@@ -22,4 +22,6 @@ class Status_Reader:
         if GPIO.input(self.gpio_1) == 1:
             if GPIO.input(self.gpio_0) == 1:
                 print("La antena esta desconectada")
+        sleep(2)
+        self.status()
 
