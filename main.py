@@ -9,7 +9,9 @@ import antenna
 
 def callback(bits, value):
     card_id = int("{:026b}".format(value)[1:25],2)
-    print(type(bits))
+    if bits < 26:
+        print("Tierra No conectada")
+        wiegand_decoder.cancel()
     if "{:010d}".format(card_id) == "0000000000":
        print("Antena desconectada")
        wiegand_decoder.cancel()
