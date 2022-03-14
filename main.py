@@ -12,7 +12,7 @@ def callback(bits, value):
     if bits < 26:
         print("Tierra No conectada")
         wiegand_decoder.cancel()
-    if "{:010d}".format(card_id) == "0000000000":
+    elif "{:010d}".format(card_id) == "0000000000":
        print("Antena desconectada")
        wiegand_decoder.cancel()
     else:
